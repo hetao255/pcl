@@ -33,10 +33,8 @@
  *
  */
 
-#include <pcl/common/time.h>
 #include <pcl/filters/extract_indices.h> // for ExtractIndices
-#include <pcl/visualization/pcl_visualizer.h>
-#include <pcl/memory.h> // for pcl::make_shared
+#include <pcl/memory.h>                  // for pcl::make_shared
 
 template <typename PointType>
 void

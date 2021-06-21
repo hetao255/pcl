@@ -39,14 +39,17 @@
 #include <pcl/io/openni_grabber.h>
 #include <pcl/io/openni_camera/openni_driver.h>
 #include <pcl/console/parse.h>
-#include <pcl/visualization/vtk.h>
 #include <pcl/visualization/pcl_visualizer.h>
 
-#include "boost.h"
+#include <vtkSmartPointer.h>
+#include <vtkImageImport.h>
+#include <vtkTIFFWriter.h>
+#include <vtkImageFlip.h>
 
 #include <mutex>
 #include <string>
 #include <vector>
+#include <boost/date_time/posix_time/posix_time.hpp> // for to_iso_string, local_time
 
 
 #define SHOW_FPS 1

@@ -42,8 +42,10 @@
 #include <pcl/console/print.h>
 #include <pcl/console/parse.h>
 #include <pcl/console/time.h>
+#include <pcl/filters/filter.h> // for removeNaNFromPointCloud
 
 #include <pcl/segmentation/unary_classifier.h>
+#include <boost/filesystem.hpp> // for path, exists, ...
 
 using namespace pcl;
 using namespace pcl::io;
@@ -183,7 +185,7 @@ main (int argc, char** argv)
     return (-1);
 
   // TODO:: make this as an optional argument ??
-  std::vector<int> tmp_indices;
+  pcl::Indices tmp_indices;
   pcl::removeNaNFromPointCloud (*cloud, *cloud, tmp_indices);
   
   // parse optional input arguments from the command line

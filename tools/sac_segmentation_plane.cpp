@@ -43,6 +43,8 @@
 #include <pcl/console/print.h>
 #include <pcl/console/parse.h>
 #include <pcl/console/time.h>
+#include <boost/filesystem.hpp> // for path, exists, ...
+#include <boost/algorithm/string/case_conv.hpp> // for to_upper_copy
 
 using namespace pcl;
 using namespace pcl::io;
@@ -107,7 +109,7 @@ compute (const pcl::PCLPointCloud2::ConstPtr &input, pcl::PCLPointCloud2 &output
   sac.setMaxIterations (max_iterations);
   bool res = sac.computeModel ();
   
-  std::vector<int> inliers;
+  pcl::Indices inliers;
   sac.getInliers (inliers);
   Eigen::VectorXf coefficients;
   sac.getModelCoefficients (coefficients);
